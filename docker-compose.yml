@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - nginx-letsencrypt:/etc/letsencrypt
+
+volumes:
+  nginx-letsencrypt:
